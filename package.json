@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nlg"
+    "test": "nlg",
+    "start": "node index.js"
   },
   "author": "Ninja.NLG",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.5.0"
+    "discord.js": "^11.5.0",
+    "request": "2.81.0"
   }
 }

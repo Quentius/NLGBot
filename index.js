@@ -20,7 +20,7 @@ bot.on('message', message=>{
                         fields: [
                           { name: "Day", value: "Monday\nTuesday\nWednesday\nThursday\nFriday\nSaturday\nSunday Af\nSunday Ev", inline: true},
                           { name: "What", value: "Training\nTraining\nScrim\nESL Benelux\nTraining\nCuore/Training\nESL Europe\nCuore/Scrim", inline: true},
-                          {name: 'Time', value: '19:30\n20:00\n19:30/20:00\nN/A\n20:00\nNot static\n15:00\nNot static', inline: true},
+                          {name: 'Time', value: '19:30\n20:00\n19:30\n19:00\n20:00\nNot static\n15:00\nNot static', inline: true},
                         ]
                       }
                     });

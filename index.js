@@ -12,7 +12,7 @@ bot.on('ready', () => {
 bot.on('message', message=>{
     let args = message.content.substring(PREFIX.length).split(" ");
         switch(args[0]) {
-            case 'esl1':
+            case 'training':
                 if(!message.member.roles.find(r => r.name === 'ESL1')) return message.channel.send('You do not have permissions')
                     message.channel.send({embed: {
                         color: 9291032,

@@ -120,7 +120,8 @@ bot.on('message', message=>{
                     .addField('Sub:', 'Friction.NLG, Blxck.NLG')
                     .setColor(0x0FFEC)
                     message.channel.sendEmbed(esl1);
-                    break;
+                break;
+                    
             case 'esl2':
                 if(!message.member.roles.find(r => r.name === "Guest")) return message.channel.send("You do not have permissions")
                    const esl2 = new Discord.RichEmbed()
@@ -131,7 +132,7 @@ bot.on('message', message=>{
                     .addField('Sub:', 'ParadoX.NLG, Tim.NLG')
                     .setColor(0xFF0087)
                     message.channel.sendEmbed(esl2);
-                    break;
+               break;
         }
 })
 

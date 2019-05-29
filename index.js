@@ -12,7 +12,7 @@ bot.on('ready', () => {
 bot.on('message', message=>{
     let args = message.content.substring(PREFIX.length).split(" ");
         switch(args[0]) {
-            case 'esl1':
+            case 'esl1train':
                 if(!message.member.roles.find(r => r.name === 'ESL1')) return message.channel.send('You do not have permissions')
                     message.channel.send({embed: {
                         color: 9291032,
@@ -20,7 +20,7 @@ bot.on('message', message=>{
                         fields: [
                           { name: "Day", value: "Monday\nTuesday\nWednesday\nThursday\nFriday\nSaturday\nSunday Af\nSunday Ev", inline: true},
                           { name: "What", value: "Training\nTraining\nScrim\nESL Benelux\nTraining\nCuore/Training\nESL Europe\nCuore/Scrim", inline: true},
-                          {name: 'Time', value: '19:30\n20:00\n19:30/20:00\nN/A\n20:00\nN/A\n15:00\mN/A', inline: true},
+                          {name: 'Time', value: '19:30\n20:00\n19:30/20:00\nN/A\n20:00\nN/A\n15:00\nN/A', inline: true},
                         ]
                       }
                     });

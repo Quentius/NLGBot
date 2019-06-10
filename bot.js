@@ -1,35 +1,25 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
-const PREFIX =  'nlg/';
-
 bot.on('ready', () => {
     console.log('This bot is online!');
 })
 
 bot.on('message', message=>{
-    let args = message.content.substring(PREFIX.length).split(" ");
-        switch(args[0]) {
-            case 'training':
+    if (message.content === 'nlg/training') {
                 if(!message.member.roles.find(r => r.name === 'ESL1')) return message.channel.send('You do not have permissions')
                     message.channel.send({embed: {
                         color: 9291032,
-                        title: "3-9 June Week",
+                        title: "10-16 June Week",
                         fields: [
                           { name: "Day", value: "Monday\nTuesday\nWednesday\nThursday\nFriday\nSaturday\nSunday Af\nSunday Ev", inline: true},
-                          { name: "What", value: "Scrim\nTraining\nScrim\nESL Benelux\nTraining\nCuore\nESL Europe\nTraining", inline: true},
-                          {name: 'Time', value: '19:30\n19:00\n20:00\n19:00\n20:00\n19:00\n15:00\n20:30', inline: true},
+                          { name: "What", value: "Scrim\nTraining\nScrim\nETraining\nScrim\nScrim\nESL Europe\nCuore", inline: true},
+                          {name: 'Time', value: '19:30\n19:00\n20:00\n19:00\n20:00\n19:00\n15:00\n20:15', inline: true},
                         ]
                       }
                     });
         }
-        switch(args[0]) {
-            case 'clear':
-                if(!message.member.roles.find(r => r.name === "Moderator")) return message.channel.send("You do not have permissions")
-                    if(!args[1])  return message.reply('Error please define second arg')
-                    message.channel.bulkDelete(args[1]);
-                    break;
-            case 'teams':
+        if (message.content === 'nlg/teams') {
                 if(!message.member.roles.find(r => r.name === "Moderator")) return message.channel.send("You do not have permissions")
                        const nlg = new  Discord.RichEmbed()
                     .setTitle('No Limits Gaming [1]')
@@ -41,14 +31,12 @@ bot.on('message', message=>{
                     const nlg1 = new  Discord.RichEmbed()
                     .setTitle('No Limits Gaming [2]')
                     .addField('Nationality', 'Europe')
-                    .addField('Captains Discord', "@Ecaron.NLG#6541")
-                    .addField('Captains Uplay', 'Ecaron.NLG')
+                    .addField('Captains Discord', "Jimmy Egg#0588")
+                    .addField('Captains Uplay', 'Jimmy-Egg.NLG')
                     .setColor(0xFF7400)
                     message.channel.sendEmbed(nlg1);
-                    break; 
         }
-        switch(args[0]) {
-            case 'help':
+        if (message.content === 'nlg/help') {
                 if(!message.member.roles.find(r => r.name === "Guest")) return message.channel.send("You do not have permissions")
                     const help = new Discord.RichEmbed()
                     .setTitle('Commands')
@@ -64,34 +52,24 @@ bot.on('message', message=>{
                     .addField('nlg/esl2', 'Show to setup of NLG 2')
                     .setColor(0x2ECC71)
                     message.channel.sendEmbed(help);
-                    break;
-            case 'twitter':
+        }
+            if (message.content === 'nlg/twitter') {
                 if(!message.member.roles.find(r => r.name === "Guest")) return message.channel.send("You do not have permissions")
                     message.channel.sendMessage('https://twitter.com/NoLimitsGaming');
-                    break;
-            case 'youtube':
+        }
+        if (message.content === 'nlg/youtube') {
                 if(!message.member.roles.find(r => r.name === "Guest")) return message.channel.send("You do not have permissions")
                     message.channel.sendMessage('https://www.youtube.com/channel/UC0MdpWpAxgA3sU2OUo9r-ZA')
-                    break;
-            case 'twitch':
+        }
+        if (message.content === 'nlg/twitch') {
                 if(!message.member.roles.find(r => r.name === "Guest")) return message.channel.send("You do not have permissions")
                    message.channel.sendMessage('https://www.twitch.tv/nolimitsgaming')
-                   break;
-            case 'discord':
+        }
+        if (message.content === 'nlg/discord') {
                 if(!message.member.roles.find(r => r.name === "Guest")) return message.channel.send("You do not have permissions")
                     message.channel.sendMessage('https://discord.gg/XjjVsqF')
-                    break;
-            case 'week':
-                if(!message.member.roles.find(r => r.name === "Guest")) return message.channel.send("You do not have permissions")
-                    const week = new Discord.RichEmbed()
-                    .setTitle('Week Planning - NLG')
-                    .addField('Teams that play this week:', 'N/A')
-                    .addField('_ _', 'N/A')
-                    .addField('Twitch', 'https://www.twitch.tv/nolimitsgaming')
-                    .setColor(0x2ECC71)
-                    message.channel.sendEmbed(week);
-                    break;
-            case 'online':
+        }
+        if (message.content === 'nlg/online') {
                 if(!message.member.roles.find(r => r.name === "Guest")) return message.channel.send("You do not have permissions")
                     let totalSeconds = (bot.uptime / 1000);
                     let days = Math.floor(totalSeconds / 86400);
@@ -105,10 +83,8 @@ bot.on('message', message=>{
                     .addField('The bot has been online for:', uptime)
                     .setColor(0xF7FF00)
                     message.channel.sendEmbed(embed);
-                    break;
         }
-        switch(args[0]){
-            case 'esl1':
+        if (message.content === 'nlg/esl1') {
                 if(!message.member.roles.find(r => r.name === "Guest")) return message.channel.send("You do not have permissions")
                     const esl1 = new Discord.RichEmbed()
                     .setTitle('ESL 1 Setup:')
@@ -118,8 +94,8 @@ bot.on('message', message=>{
                     .addField('Sub:', 'King.NLG, Jimmy-Egg.NLG')
                     .setColor(0x0FFEC)
                     message.channel.sendEmbed(esl1);
-                    break;
-            case 'esl2':
+        }
+        if (message.content === 'nlg/esl2') {
                 if(!message.member.roles.find(r => r.name === "Guest")) return message.channel.send("You do not have permissions")
                    const esl2 = new Discord.RichEmbed()
                     .setTitle('ESL 2 Setup:')
@@ -129,8 +105,7 @@ bot.on('message', message=>{
                     .addField('Sub:', 'ParadoX.NLG, Tim.NLG')
                     .setColor(0xFF0087)
                     message.channel.sendEmbed(esl2);
-                    break;
         }
 })
-client.login(process.env.BOT_TOKEN);
+bot.login(process.env.BOT_TOKEN);
 

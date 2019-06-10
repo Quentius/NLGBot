@@ -90,8 +90,8 @@ bot.on('message', message=>{
                     .setTitle('ESL 1 Setup:')
                     .addField('Coach:', 'LagGrenade.NLG')
                     .addField('IGL:', 'Ninja.NLG')
-                    .addField('Main:', 'Lortboy.NLG, Angor.NLG, Jubiman.NLG, Stofzuig.NLG')
-                    .addField('Sub:', 'King.NLG, Jimmy-Egg.NLG')
+                    .addField('Main:', 'Infested.NLG, Angor.NLG, Jubiman.NLG, Nightmare.NLG')
+                    .addField('Sub:', 'King.NLG, Blxck.NLG')
                     .setColor(0x0FFEC)
                     message.channel.sendEmbed(esl1);
         }
@@ -100,9 +100,9 @@ bot.on('message', message=>{
                    const esl2 = new Discord.RichEmbed()
                     .setTitle('ESL 2 Setup:')
                     .addField('Coach:', 'N/A')
-                    .addField('IGL:',  'Ecaron.NLG')
-                    .addField('Main:', 'Cha0s.NLG, Reniplay.NLG, R4mbo.NLG, Reklas.NLG')
-                    .addField('Sub:', 'ParadoX.NLG, Tim.NLG')
+                    .addField('IGL:',  'Jimmy-Egg.NLG')
+                    .addField('Main:', 'Ecaron.NLG, Reniplay.NLG, R4mbo.NLG, Reklas.NLG')
+                    .addField('Sub:', 'LagGrenade.NLG, Veeti.NLG')
                     .setColor(0xFF0087)
                     message.channel.sendEmbed(esl2);
         }

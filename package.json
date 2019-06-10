@@ -2,10 +2,9 @@
   "name": "nolimitsgaming",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "bot.js",
   "scripts": {
-    "test": "nlg",
-    "start": "node index.js"
+    "start": "node bot.js"
   },
   "author": "Ninja.NLG",
   "license": "ISC",

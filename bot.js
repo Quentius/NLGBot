@@ -100,9 +100,9 @@ bot.on('message', message=>{
                    const esl2 = new Discord.RichEmbed()
                     .setTitle('ESL 2 Setup:')
                     .addField('Coach:', 'N/A')
-                    .addField('IGL:',  'Jimmy-Egg.NLG')
-                    .addField('Main:', 'Ecaron.NLG, Reniplay.NLG, R4mbo.NLG, Reklas.NLG')
-                    .addField('Sub:', 'LagGrenade.NLG, Veeti.NLG')
+                    .addField('IGL:',  'lagGrenade.NLG')
+                    .addField('Main:', 'Ecaron.NLG, Reniplay.NLG, Jimmy-Egg.NLG, Reklas.NLG,')
+                    .addField('Sub:', 'Rain.NLG, Veeti.NLG')
                     .setColor(0xFF0087)
                     message.channel.sendEmbed(esl2);
         }

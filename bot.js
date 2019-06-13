@@ -100,7 +100,7 @@ bot.on('message', message=>{
                    const esl2 = new Discord.RichEmbed()
                     .setTitle('ESL 2 Setup:')
                     .addField('Coach:', 'N/A')
-                    .addField('IGL:',  'lagGrenade.NLG')
+                    .addField('IGL:',  'LagGrenade.NLG')
                     .addField('Main:', 'Ecaron.NLG, Reniplay.NLG, Jimmy-Egg.NLG, Reklas.NLG,')
                     .addField('Sub:', 'Rain.NLG, Veeti.NLG')
                     .setColor(0xFF0087)

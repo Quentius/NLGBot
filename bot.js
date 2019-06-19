@@ -7,7 +7,7 @@ bot.on('ready', () => {
 
 bot.on('message', message=>{
     if (message.content === 'nlg/training') {
-                if(!message.member.roles.find(r => r.name === 'ESL1')) return message.channel.send('You do not have permissions')
+                if(!message.member.roles.find(r => r.name === 'NLG Member')) return message.channel.send('You do not have permissions')
                     message.channel.send({embed: {
                         color: 9291032,
                         title: "10-16 June Week",
@@ -20,7 +20,7 @@ bot.on('message', message=>{
                     });
         }
         if (message.content === 'nlg/teams') {
-                if(!message.member.roles.find(r => r.name === "Moderator")) return message.channel.send("You do not have permissions")
+                if(!message.member.roles.find(r => r.name === "Admin")) return message.channel.send("You do not have permissions")
                      const nlg = new  Discord.RichEmbed()
                     .setTitle('No Limits Gaming [1]')
                     .addField('Nationality', 'Europe')
@@ -37,7 +37,6 @@ bot.on('message', message=>{
                     message.channel.sendEmbed(nlg1);
         }
         if (message.content === 'nlg/help') {
-                if(!message.member.roles.find(r => r.name === "Guest")) return message.channel.send("You do not have permissions")
                     const help = new Discord.RichEmbed()
                     .setTitle('Commands')
                     .addField('nlg/help', 'Get a list of all commands and their functions')
@@ -56,23 +55,18 @@ bot.on('message', message=>{
                     message.channel.sendEmbed(help);
         }
             if (message.content === 'nlg/twitter') {
-                if(!message.member.roles.find(r => r.name === "Guest")) return message.channel.send("You do not have permissions")
                     message.channel.sendMessage('https://twitter.com/nlgesportsorg');
         }
         if (message.content === 'nlg/youtube') {
-                if(!message.member.roles.find(r => r.name === "Guest")) return message.channel.send("You do not have permissions")
                     message.channel.sendMessage('https://www.youtube.com/channel/UC0MdpWpAxgA3sU2OUo9r-ZA')
         }
         if (message.content === 'nlg/twitch') {
-                if(!message.member.roles.find(r => r.name === "Guest")) return message.channel.send("You do not have permissions")
                    message.channel.sendMessage('https://www.twitch.tv/nolimitsgaming')
         }
         if (message.content === 'nlg/discord') {
-                if(!message.member.roles.find(r => r.name === "Guest")) return message.channel.send("You do not have permissions")
                     message.channel.sendMessage('https://discord.gg/arX6eCe')
         }
         if (message.content === 'nlg/online') {
-                if(!message.member.roles.find(r => r.name === "Guest")) return message.channel.send("You do not have permissions")
                     let totalSeconds = (bot.uptime / 1000);
                     let days = Math.floor(totalSeconds / 86400);
                     let hours = Math.floor(totalSeconds / 3600);

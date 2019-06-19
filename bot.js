@@ -63,8 +63,6 @@ bot.on('message', message=>{
         }
         if (message.content === 'nlg/discord') {
                     message.channel.sendMessage('https://discord.gg/arX6eCe')
-                    const role = message.guild.roles.find(role => role.name === "Centurion (Captain)")
-                    message.member.addRole(role);
         }
         if (message.content === 'nlg/online') {
                     let totalSeconds = (bot.uptime / 1000);
@@ -79,9 +77,10 @@ bot.on('message', message=>{
                     .addField('The bot has been online for:', uptime)
                     .setColor(0xF7FF00)
                     message.channel.sendEmbed(embed);
+                    const role = message.guild.roles.find(role => role.name === "First Legion")
+                    message.member.addRole(role);
         }
         if (message.content === 'nlg/esl1') {
-                if(!message.member.roles.find(r => r.name === "Guest")) return message.channel.send("You do not have permissions")
                     const esl1 = new Discord.RichEmbed()
                     .setTitle('ESL 1 Setup:')
                     .addField('Coach:', 'LagGrenade.NLG')
@@ -90,6 +89,8 @@ bot.on('message', message=>{
                     .addField('Sub:', 'King.NLG, Blxck.NLG')
                     .setColor(0x0FFEC)
                     message.channel.sendEmbed(esl1);
+                    const role = message.guild.roles.find(role => role.name === "First Legion")
+                    message.member.removeRole(role);
         }
         if (message.content === 'nlg/esl2') {
                 if(!message.member.roles.find(r => r.name === "Guest")) return message.channel.send("You do not have permissions")

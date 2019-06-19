@@ -21,7 +21,7 @@ bot.on('message', message=>{
         }
         if (message.content === 'nlg/ikbennick') {
             let Role = 'Legate'
-            member.addRole(Role);
+            member.addRole(Role)
             message.channel.bulkDelete(2));
         }
         if (message.content === 'nlg/teams') {

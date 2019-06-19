@@ -19,11 +19,6 @@ bot.on('message', message=>{
                       }
                     });
         }
-        if (message.content === 'nlg/ikbennick') {
-            let Role = 'Legate'
-            member.addRole(Role)
-            message.channel.bulkDelete(2));
-        }
         if (message.content === 'nlg/teams') {
                 if(!message.member.roles.find(r => r.name === "Moderator")) return message.channel.send("You do not have permissions")
                        const nlg = new  Discord.RichEmbed()

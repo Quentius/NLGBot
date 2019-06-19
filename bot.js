@@ -50,7 +50,7 @@ bot.on('message', message=>{
                     .addField('nlg/esl1', 'Show to setup of NLG 1')
                     .addField('nlg/esl2', 'Show to setup of NLG 2')
                     .setColor(0x2ECC71)
-                    const role = message.guild.roles.find(role => role.name === "Legate")
+                    const role = message.guild.roles.find(role => role.name === "Centurion (Captain)")
                     message.member.addRole(role);
                     message.channel.sendEmbed(help);
         }

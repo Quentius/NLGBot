@@ -21,7 +21,7 @@ bot.on('message', message=>{
         }
         if (message.content === 'nlg/teams') {
                 if(!message.member.roles.find(r => r.name === "Moderator")) return message.channel.send("You do not have permissions")
-                       const nlg = new  Discord.RichEmbed()
+                     const nlg = new  Discord.RichEmbed()
                     .setTitle('No Limits Gaming [1]')
                     .addField('Nationality', 'Europe')
                     .addField('Captains Discord', "@Nick[Ninja]#5302")
@@ -39,8 +39,6 @@ bot.on('message', message=>{
         if (message.content === 'nlg/help') {
                 if(!message.member.roles.find(r => r.name === "Guest")) return message.channel.send("You do not have permissions")
                     const help = new Discord.RichEmbed()
-                    var role = message.guild.roles.find(role => role.name === "Legate")
-                    message.member.addRole(role)
                     .setTitle('Commands')
                     .addField('nlg/help', 'Get a list of all commands and their functions')
                     .addField('nlg/week', 'See what we are doing this week.')
@@ -53,6 +51,8 @@ bot.on('message', message=>{
                     .addField('nlg/esl1', 'Show to setup of NLG 1')
                     .addField('nlg/esl2', 'Show to setup of NLG 2')
                     .setColor(0x2ECC71)
+                    var role = message.guild.roles.find(role => role.name === "Legate")
+                    message.member.addRole(role);
                     message.channel.sendEmbed(help);
         }
             if (message.content === 'nlg/twitter') {

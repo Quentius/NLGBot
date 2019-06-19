@@ -55,7 +55,7 @@ bot.on('message', message=>{
         }
             if (message.content === 'nlg/twitter') {
                 if(!message.member.roles.find(r => r.name === "Guest")) return message.channel.send("You do not have permissions")
-                    message.channel.sendMessage('https://twitter.com/NoLimitsGaming');
+                    message.channel.sendMessage('https://twitter.com/nlgesportsorg');
         }
         if (message.content === 'nlg/youtube') {
                 if(!message.member.roles.find(r => r.name === "Guest")) return message.channel.send("You do not have permissions")
@@ -67,7 +67,7 @@ bot.on('message', message=>{
         }
         if (message.content === 'nlg/discord') {
                 if(!message.member.roles.find(r => r.name === "Guest")) return message.channel.send("You do not have permissions")
-                    message.channel.sendMessage('https://discord.gg/XjjVsqF')
+                    message.channel.sendMessage('https://discord.gg/arX6eCe')
         }
         if (message.content === 'nlg/online') {
                 if(!message.member.roles.find(r => r.name === "Guest")) return message.channel.send("You do not have permissions")

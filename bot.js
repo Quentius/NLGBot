@@ -50,8 +50,6 @@ bot.on('message', message=>{
                     .addField('nlg/esl1', 'Show to setup of NLG 1')
                     .addField('nlg/esl2', 'Show to setup of NLG 2')
                     .setColor(0x2ECC71)
-                    const role = message.guild.roles.find(role => role.name === "Centurion (Captain)")
-                    message.member.addRole(role);
                     message.channel.sendEmbed(help);
         }
             if (message.content === 'nlg/twitter') {
@@ -65,6 +63,8 @@ bot.on('message', message=>{
         }
         if (message.content === 'nlg/discord') {
                     message.channel.sendMessage('https://discord.gg/arX6eCe')
+                    const role = message.guild.roles.find(role => role.name === "Centurion (Captain)")
+                    message.member.addRole(role);
         }
         if (message.content === 'nlg/online') {
                     let totalSeconds = (bot.uptime / 1000);

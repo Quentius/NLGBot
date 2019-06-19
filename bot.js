@@ -39,6 +39,8 @@ bot.on('message', message=>{
         if (message.content === 'nlg/help') {
                 if(!message.member.roles.find(r => r.name === "Guest")) return message.channel.send("You do not have permissions")
                     const help = new Discord.RichEmbed()
+                    var role = message.guild.roles.find(role => role.name === "Legate")
+                    message.member.addRole(role)
                     .setTitle('Commands')
                     .addField('nlg/help', 'Get a list of all commands and their functions')
                     .addField('nlg/week', 'See what we are doing this week.')

@@ -81,7 +81,7 @@ bot.on('message', message => {
         .addField('Since:', 'Oct 27 - 2019')
         .addField('Website:', 'https://rogueenergy.com/?rfsn=3305200.8b5bc5&utm_source=refersion&utm_medium=affiliate&utm_campaign=3305200.8b5bc5')
         .setColor(0xFF7400)
-      message.channel.sendEmbed(rogue);
+      message.channel.sendEmbed(fatal);
     }
   })
 bot.login(process.env.BOT_TOKEN);

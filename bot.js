@@ -20,7 +20,7 @@ bot.on('message', message => {
     if (message.content === 'fse/social') {
       const social = new Discord.RichEmbed()
       .setTitle('Socials')
-      .addField('Twitter:','https:"//twitter.com/official_fse')
+      .addField('Twitter:','https://twitter.com/official_FSE')
       .addField('Twitch:','https://www.twitch.tv/officialfirestormesports')
       .addField('Discord:','https://discord.gg/CVA4HDT')
       .addField('YouTube:','https://www.youtube.com/channel/UCOJenu3U0OS__ARF49Y9PGQ')
@@ -86,6 +86,12 @@ bot.on('message', message => {
         .addField('Website:', 'https://rogueenergy.com/?rfsn=3305200.8b5bc5&utm_source=refersion&utm_medium=affiliate&utm_campaign=3305200.8b5bc5')
         .setColor(0x4dffd2)
       message.channel.sendEmbed(rogue);
+      const boss = new Discord.RichEmbed()  
+        .setTitle('Boss Boxes')
+        .addField('Since:', 'Oct 27 - 2019')
+        .addField('Website:', 'https://bossboxess.com')
+        .setColor(0x4dffd2)
+      message.channel.sendEmbed(boss);
     }
   })
 bot.login(process.env.BOT_TOKEN);

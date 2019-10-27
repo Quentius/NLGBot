@@ -16,16 +16,17 @@ bot.on('message', message => {
         .addField('fse/sponsors', 'Show ur sponsors')
        .setColor(0x2ECC71)
       message.channel.sendEmbed(help);
-    }
+    }  
     if (message.content === 'fse/social') {
       const social = new Discord.RichEmbed()
-      message.channel.sendMessage('Twitter: https://twitter.com/official_fse')
-      message.channel.sendMessage('Twitch: https://www.twitch.tv/officialfirestormesports')
-      message.channel.sendMessage('Discord: https://discord.gg/CVA4HDT')
-      message.channel.sendMessage('YouTube: https://www.youtube.com/channel/UCOJenu3U0OS__ARF49Y9PGQ')
-      message.channel.sendMessage('Instagram: https://www.instagram.com/FireStormEsports')
-      message.channel.sendMessage('Website: http://firestorm-esports.com')
-        .setColor(0x99ff66)
+      .setTitle('Socials')
+      .addField('Twitter:','https:"//twitter.com/official_fse')
+      .addField('Twitch:','https://www.twitch.tv/officialfirestormesports')
+      .addField('Discord:','https://discord.gg/CVA4HDT')
+      .addField('YouTube:','https://www.youtube.com/channel/UCOJenu3U0OS__ARF49Y9PGQ')
+      .addField('Instagram:','https://www.instagram.com/FireStormEsports')
+      .addField('Website:','http://firestorm-esports.com')
+      .setColor(0x99ff66)
       message.channel.sendEmbed(social)
     }
     if (message.content === 'nlg/online') {

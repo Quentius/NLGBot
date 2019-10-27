@@ -55,21 +55,21 @@ bot.on('message', message => {
         .addField('Location', 'Europe')
         .addField('Players:', 'Death, Pendton, Assassin, Bourney, vTyler')
         .addField('Subs:', 'Blitz')
-        .setColor(0xFF7400)
+        .setColor(0x99ccff)
       message.channel.sendEmbed(r6cx);
       const rlx = new Discord.RichEmbed()
         .setTitle('Rocket League | PC')
         .addField('Location', 'Europe')
         .addField('Players:', 'Levi, Wesbry, Pino')
         .addField('Subs:', '-')
-        .setColor(0xFF7400)
+        .setColor(0x9966ff)
       message.channel.sendEmbed(rlx);
       const fnc = new Discord.RichEmbed()
         .setTitle('Fortnite | Console')
         .addField('Location', 'North America')
         .addField('Players:', 'Coast, Dread, Krymer')
         .addField('Subs:', '-')
-        .setColor(0xFF7400)
+        .setColor(0x9966ff)
       message.channel.sendEmbed(fnc);
     }
     if (message.content === 'fse/sponsors') {
@@ -77,11 +77,14 @@ bot.on('message', message => {
         .setTitle('Fatal Grips')
         .addField('Since:', 'Oct 27 - 2019')
         .addField('Website:', 'https://fatalgrips.com/')
+        .setColor(0xffd633)
+      message.channel.sendEmbed(fatal);
+      const rogue = new Discord.RichEmbed()  
         .setTitle('Rogue Energy')
         .addField('Since:', 'Oct 27 - 2019')
         .addField('Website:', 'https://rogueenergy.com/?rfsn=3305200.8b5bc5&utm_source=refersion&utm_medium=affiliate&utm_campaign=3305200.8b5bc5')
-        .setColor(0xFF7400)
-      message.channel.sendEmbed(fatal);
+        .setColor(0x4dffd2)
+      message.channel.sendEmbed(rogue);
     }
   })
 bot.login(process.env.BOT_TOKEN);

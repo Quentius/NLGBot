@@ -75,14 +75,11 @@ bot.on('message', message => {
     if (message.content === 'fse/sponsors') {
       const fatal = new Discord.RichEmbed()
         .setTitle('Fatal Grips')
-        .addField('Oct 27 - 2019')
-        .addField('https://fatalgrips.com/')
-        .setColor(0xFF7400)
-      message.channel.sendEmbed(fatal);
-      const rogue = new Discord.RichEmbed()
+        .addField('Since: ', 'Oct 27 - 2019')
+        .addField('Website: ', 'https://fatalgrips.com/')
         .setTitle('Rogue Energy')
-        .addField('Oct 27 - 2019')
-        .addField('https://rogueenergy.com/?rfsn=3305200.8b5bc5&utm_source=refersion&utm_medium=affiliate&utm_campaign=3305200.8b5bc5')
+        .addField('Since: ', 'Oct 27 - 2019')
+        .addField('Website: ', 'https://rogueenergy.com/?rfsn=3305200.8b5bc5&utm_source=refersion&utm_medium=affiliate&utm_campaign=3305200.8b5bc5')
         .setColor(0xFF7400)
       message.channel.sendEmbed(rogue);
     }

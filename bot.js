@@ -2,107 +2,89 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 
 bot.on('ready', () => {
-    console.log('This bot is online!');
+  console.log('This bot is online!');
 })
 
-bot.on('message', message=>{
-    if (message.content === 'nlg/training') {
-                if(!message.member.roles.find(r => r.name === 'NLG Member')) return message.channel.send('You do not have permissions')
-                    message.channel.send({embed: {
-                        color: 9291032,
-                        title: "10-16 June Week",
-                        fields: [
-                          { name: "Day", value: "Monday\nTuesday\nWednesday\nThursday\nFriday\nSaturday\nSunday Af\nSunday Ev", inline: true},
-                          { name: "What", value: "Scrim\nTraining\nScrim\nETraining\nScrim\nScrim\nESL Europe\nCuore", inline: true},
-                          {name: 'Time', value: '19:30\n19:00\n20:00\n19:00\n20:00\n19:00\n15:00\n20:15', inline: true},
-                        ]
-                      }
-                    });
-        }
-        if (message.content === 'nlg/teams') {
-                if(!message.member.roles.find(r => r.name === "Admin")) return message.channel.send("You do not have permissions")
-                     const nlg = new  Discord.RichEmbed()
-                    .setTitle('No Limits Gaming [1]')
-                    .addField('Nationality', 'Europe')
-                    .addField('Captains Discord', "@Nick[Ninja]#5302")
-                    .addField('Captains Uplay', 'Ninja.NLG')
-                    .setColor(0xFF7400)
-                    message.channel.sendEmbed(nlg);
-                    const nlg1 = new  Discord.RichEmbed()
-                    .setTitle('No Limits Gaming [2]')
-                    .addField('Nationality', 'Europe')
-                    .addField('Captains Discord', "Jimmy Egg#0588")
-                    .addField('Captains Uplay', 'Jimmy-Egg.NLG')
-                    .setColor(0xFF7400)
-                    message.channel.sendEmbed(nlg1);
-        }
-        if (message.content === 'nlg/help') {
-                    const help = new Discord.RichEmbed()
-                    .setTitle('Commands')
-                    .addField('nlg/help', 'Get a list of all commands and their functions')
-                    .addField('nlg/week', 'See what we are doing this week.')
-                    .addField('nlg/discord', 'Get the discord invite link')
-                    .addField('nlg/twitter', 'Get a link to our Twitter page')
-                    .addField('nlg/youtube', 'Get a link to our YouTube page')
-                    .addField('nlg/twitch', 'Get a link to our Twitch page')
-                    .addField('nlg/online', 'See the online time of the bot')
-                    .addField('nlg/clear', 'Clear a chosen amount of messages')
-                    .addField('nlg/esl1', 'Show to setup of NLG 1')
-                    .addField('nlg/esl2', 'Show to setup of NLG 2')
-                    .setColor(0x2ECC71)
-                    message.channel.sendEmbed(help);
-        }
-            if (message.content === 'nlg/twitter') {
-                    message.channel.sendMessage('https://twitter.com/nlgesportsorg');
-        }
-        if (message.content === 'nlg/youtube') {
-                    message.channel.sendMessage('https://www.youtube.com/channel/UC0MdpWpAxgA3sU2OUo9r-ZA')
-        }
-        if (message.content === 'nlg/twitch') {
-                   message.channel.sendMessage('https://www.twitch.tv/nolimitsgaming')
-        }
-        if (message.content === 'nlg/discord') {
-                    message.channel.sendMessage('https://discord.gg/arX6eCe')
-        }
-        if (message.content === 'nlg/online') {
-                    let totalSeconds = (bot.uptime / 1000);
-                    let days = Math.floor(totalSeconds / 86400);
-                    let hours = Math.floor(totalSeconds / 3600);
-                    totalSeconds %= 3600;
-                    let minutes = Math.floor(totalSeconds / 60);
-                    let seconds = Math.floor(totalSeconds % 60);
-                    let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`;
-                    const embed = new Discord.RichEmbed()
-                    .setTitle('Runtime:')
-                    .addField('The bot has been online for:', uptime)
-                    .setColor(0xF7FF00)
-                    message.channel.sendEmbed(embed);
-                    const role = message.guild.roles.find(role => role.name === "First Legion")
-                    message.member.addRole(role);
-        }
-        if (message.content === 'nlg/esl1') {
-                    const esl1 = new Discord.RichEmbed()
-                    .setTitle('ESL 1 Setup:')
-                    .addField('Coach:', 'LagGrenade.NLG')
-                    .addField('IGL:', 'Ninja.NLG')
-                    .addField('Main:', 'Infested.NLG, Angor.NLG, Jubiman.NLG, Nightmare.NLG')
-                    .addField('Sub:', 'King.NLG, Blxck.NLG')
-                    .setColor(0x0FFEC)
-                    message.channel.sendEmbed(esl1);
-                    const role = message.guild.roles.find(role => role.name === "First Legion")
-                    message.member.removeRole(role);
-        }
-        if (message.content === 'nlg/esl2') {
-                if(!message.member.roles.find(r => r.name === "Guest")) return message.channel.send("You do not have permissions")
-                   const esl2 = new Discord.RichEmbed()
-                    .setTitle('ESL 2 Setup:')
-                    .addField('Coach:', 'N/A')
-                    .addField('IGL:',  'LagGrenade.NLG')
-                    .addField('Main:', 'Ecaron.NLG, Reniplay.NLG, Jimmy-Egg.NLG, Reklas.NLG,')
-                    .addField('Sub:', 'Rain.NLG, Veeti.NLG')
-                    .setColor(0xFF0087)
-                    message.channel.sendEmbed(esl2);
-        }
-})
+bot.on('message', message => {
+  if (message.content === 'fse/help') {
+    const help = new Discord.RichEmbed()
+      .setTitle('Commands')
+      .addField('fse/help', 'Get a list of all commands and their functions')
+      .addField('fse/social', 'Get a link to our Twitch page')
+      .addField('fse/online', 'See the online time of the bot')
+      .addField('fse/teams', 'Show to setup of our teams')
+      .addField('fse/sponsors', 'Show ur sponsors')
+      .setColor(0x2ECC71)
+    message.channel.sendEmbed(help);
+  }
+    if (message.content === 'fse/social') {
+      const social = new Discord.RichEmbed()
+      message.channel.sendMessage('Twitter: https://twitter.com/official_fse')
+      message.channel.sendMessage('Twitch: https://www.twitch.tv/officialfirestormesports')
+      message.channel.sendMessage('Discord: https://discord.gg/CVA4HDT')
+      message.channel.sendMessage('YouTube: https://www.youtube.com/channel/UCOJenu3U0OS__ARF49Y9PGQ')
+      message.channel.sendMessage('Instagram: https://www.instagram.com/FireStormEsports')
+      message.channel.sendMessage('Website: http://firestorm-esports.com')
+        .setColor(0x99ff66)
+      message.channel.sendEmbed(social)
+    }
+    if (message.content === 'nlg/online') {
+      let totalSeconds = (bot.uptime / 1000);
+      let days = Math.floor(totalSeconds / 86400);
+      let hours = Math.floor(totalSeconds / 3600);
+      totalSeconds %= 3600;
+      let minutes = Math.floor(totalSeconds / 60);
+      let seconds = Math.floor(totalSeconds % 60);
+      let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`;
+      const embed = new Discord.RichEmbed()
+        .setTitle('Runtime:')
+        .addField('The bot has been online for:', uptime)
+        .setColor(0xF7FF00)
+      message.channel.sendEmbed(embed);
+    }
+    if (message.content === 'fse/teams') {
+      const r6spc = new Discord.RichEmbed()
+        .setTitle('Rainbow Six Siege | PC')
+        .addField('Location:', 'Europe')
+        .addField('Players:', 'Eden, Zeus, Bxsti, Elon, Ballen')
+        .addField('Subs:', 'Bihac')
+        .setColor(0xFF7400)
+      message.channel.sendEmbed(r6spc);
+      const r6cx = new Discord.RichEmbed()
+        .setTitle('Rainbow Six Siege | XBOX')
+        .addField('Location', 'Europe')
+        .addField('Players:', 'Death, Pendton, Assassin, Bourney, vTyler')
+        .addField('Subs:', 'Blitz')
+        .setColor(0xFF7400)
+      message.channel.sendEmbed(r6cx);
+      const rlx = new Discord.RichEmbed()
+        .setTitle('Rocket League | PC')
+        .addField('Location', 'Europe')
+        .addField('Players:', 'Levi, Wesbry, Pino')
+        .addField('Subs:', '-')
+        .setColor(0xFF7400)
+      message.channel.sendEmbed(rlx);
+      const fnc = new Discord.RichEmbed()
+        .setTitle('Fortnite | Console')
+        .addField('Location', 'North America')
+        .addField('Players:', 'Coast, Dread, Krymer')
+        .addField('Subs:', '-')
+        .setColor(0xFF7400)
+      message.channel.sendEmbed(fnc);
+    }
+    if (message.content === 'fse/sponsors') {
+      const fatal = new Discord.RichEmbed()
+        .setTitle('Fatal Grips')
+        .addField('Oct 27 - 2019')
+        .addField('https://fatalgrips.com/')
+        .setColor(0xFF7400)
+      message.channel.sendEmbed(fatal);
+      const rogue = new Discord.RichEmbed()
+        .setTitle('Rogue Energy')
+        .addField('Oct 27 - 2019')
+        .addField('https://rogueenergy.com/?rfsn=3305200.8b5bc5&utm_source=refersion&utm_medium=affiliate&utm_campaign=3305200.8b5bc5')
+        .setColor(0xFF7400)
+      message.channel.sendEmbed(rogue);
+    }
+  })
 bot.login(process.env.BOT_TOKEN);
-

@@ -6,17 +6,17 @@ bot.on('ready', () => {
 })
 
 bot.on('message', message => {
-  if (message.content === 'fse/help') {
+    if (message.content === 'fse/help') {
     const help = new Discord.RichEmbed()
-      .setTitle('Commands')
-      .addField('fse/help', 'Get a list of all commands and their functions')
-      .addField('fse/social', 'Get a link to our Twitch page')
-      .addField('fse/online', 'See the online time of the bot')
-      .addField('fse/teams', 'Show to setup of our teams')
-      .addField('fse/sponsors', 'Show ur sponsors')
-      .setColor(0x2ECC71)
-    message.channel.sendEmbed(help);
-  }
+       .setTitle('Commands')
+       .addField('fse/help', 'Get a list of all commands and their functions')
+       .addField('fse/social', 'Get a link to our Twitch page')
+       .addField('fse/online', 'See the online time of the bot')
+       .addField('fse/teams', 'Show to setup of our teams')
+        .addField('fse/sponsors', 'Show ur sponsors')
+       .setColor(0x2ECC71)
+      message.channel.sendEmbed(help);
+    }
     if (message.content === 'fse/social') {
       const social = new Discord.RichEmbed()
       message.channel.sendMessage('Twitter: https://twitter.com/official_fse')

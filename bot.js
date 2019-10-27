@@ -69,7 +69,7 @@ bot.on('message', message => {
         .addField('Location', 'North America')
         .addField('Players:', 'Coast, Dread, Krymer')
         .addField('Subs:', '-')
-        .setColor(0xb8b894)
+        .setColor(0x9966ff)
       message.channel.sendEmbed(fnc);
     }
     if (message.content === 'fse/sponsors') {
